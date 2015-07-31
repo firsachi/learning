@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class OutputFile {
 	
-	public static void write(ArrayList<Object> array, String path){
+	public static void write(ArrayList<Things> array, String path){
 		File outFile=new File(path);
 		try{
 			if (outFile.exists()) {
@@ -17,10 +17,10 @@ public class OutputFile {
 			
 			try{
 				for(int i=0;i<array.size();i++){
-					out.print(array.get(i));
-					if(array.get(i).equals(" ")){
-						out.println("");
-					}
+					out.print("Name "+array.get(i).getName()+" ");
+					out.print("Color "+array.get(i).getColor()+" ");
+					out.print("Price "+array.get(i).getPrice()+" ");
+					out.println("");
 				}
 			}finally{
 				out.close();
